@@ -7,10 +7,10 @@ POST  http://localhost:4000/flights
 Content-Type: application/json
 
 {
-    "Name":"Ian Kamande",
-    "Email":"ian@gmail.com",
-    "Destination":"India",
-    "TravelDate":"2023/02/20"
+    "Name":"Elvis Gisiora",
+    "Email":"elvis@gmail.com",
+    "Destination":"China",
+    "TravelDate":"2023/03/03"
 }
 
 ###
@@ -30,3 +30,30 @@ GET http://localhost:4000/flights/2a4b2c94-84b7-4462-9e80-a5d8bc381f96
 
 ###
 DELETE  http://localhost:4000/flights/2a4b2c94-84b7-4462-9e80-a5d8bc381f96
+
+
+
+###
+POST  http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+    "Name":"Elvis Gisiora",
+    "Email":"elvis@gmail.com",
+    "Password":"Tryme!here23",
+    "ConfirmPassword":"Tryme!here23"
+}
+
+###
+POST  http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    "Email":"roy@gmail.com",
+    "Password":"Tryme!here23"
+}
+
+
+###
+GET  http://localhost:4000/auth/home
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI5ZGI3NGE3LWY0ODYtNDhkZi1iMTI1LWNmZTI3Nzk1ODFhMCIsIk5hbWUiOiJSb3kgV2FueW9pa2UiLCJFbWFpbCI6InJveUBnbWFpbC5jb20iLCJSb2xlIjoidXNlciIsImlhdCI6MTY3NTg1MDY0NSwiZXhwIjoxNjc1ODU0MjQ1fQ.0RZ-kUWnntilW1tMh9KHhHsdBsMb_yiqqRjSadbtMjo

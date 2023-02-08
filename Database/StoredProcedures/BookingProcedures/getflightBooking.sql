@@ -5,4 +5,3 @@ AS
 BEGIN
 SELECT * FROM FlightsBookings WHERE Id=@id AND isDeleted ='0'
 END
-
