@@ -2,6 +2,7 @@ import { RequestHandler,Request,Response } from 'express'
 import mssql from 'mssql'
 import {v4 as uid} from 'uuid'
 import { sqlConfig } from '../Config'
+import { bookingSchema } from '../Helpers'
 import { Booking } from '../Models'
 
 interface ExtendedRequest extends Request{
@@ -44,6 +45,10 @@ try {
   try {
     const id =uid()
     const {Name,Email,TravelDate,Destination}= req.body
+    const{ error}=bookingSchema.validate(req.body)
+    if(error){
+      return res.status(422).json(error.details[0].message)
+    }
     const pool= await mssql.connect(sqlConfig)
     await pool.request()
     .input('id',id)
